@@ -48,12 +48,11 @@ def keyGenerator(p, q):
     publicKey=[]
     privateKey = []
     n = p*q
-    print("n= "+str(n))
+    print("n: "+str(n))
     phi = (p-1)*(q-1)
-    print("phi= "+str(phi))
+    print("phi: "+str(phi))
     salida = True
     e = 0
-    c = 0
     d = 0
     while salida:
 
@@ -62,8 +61,8 @@ def keyGenerator(p, q):
         if d > 0:
             salida = False
 
-    print ("e= " + str(e))
-    print ("d= " + str(d))
+    print("Llave publica: " + str(e))
+    print("Llave privada: " + str(d))
     publicKey.append(e)
     publicKey.append(n)
 
