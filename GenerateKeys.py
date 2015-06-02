@@ -48,10 +48,22 @@ def keyGenerator(p, q):
     publicKey=[]
     privateKey = []
     n = p*q
+    print("n= "+str(n))
     phi = (p-1)*(q-1)
-    e = 79
-    c, d = EEA(phi, e)
+    print("phi= "+str(phi))
+    salida = True
+    e = 0
+    c = 0
+    d = 0
+    while salida:
 
+        e = generateE(phi)
+        c, d = EEA(phi, e)
+        if d > 0:
+            salida = False
+
+    print ("e= " + str(e))
+    print ("d= " + str(d))
     publicKey.append(e)
     publicKey.append(n)
 
@@ -67,6 +79,7 @@ def generateE(phi):
         if mcd(e, phi) == 1:
             salir = False
     return e
+
 
 def mcd(a, b):
     if b == 0:

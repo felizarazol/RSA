@@ -2,19 +2,19 @@ __author__ = 'estma_000'
 
 import GenerateKeys
 
-m = "6882326879666683"
+m = "71658479"
 m1 = []
 c = []
 n = str(47*71)
 
 u = ""
 for i in range(0, len(m)):
-    if (len(u) == len(n)-1):
+    if len(u) == len(n)-1:
         m1.append(int(u))
         u = m[i]
     else:
-        u = u + m[i]
-    if (i == len(m)-1):
+        u += m[i]
+    if i == len(m)-1:
         m1.append(int(u))
 
 print(m1)
